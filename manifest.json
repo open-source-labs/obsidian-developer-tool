@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Obsidian Developer Tool",
+    "description": "Developer tool for the Obsidian JavaScript library: http://obsidian.land/",
+    "version": "1.0",
+    "homepage_url": "http://obsidian.land/",
+    "author": "Yasir Choudhury, Anthony Guan, Ali Fay, Linda Zhao, Yurii Shchyrba",
+    "devtools_page": "devtools.html",
+    "permissions": ["storage"],
+     "action": {
+      "default_title": "Obsidian Developer Tool"
+    }
+}
