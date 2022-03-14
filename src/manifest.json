@@ -1,0 +1,8 @@
+{
+  "manifest_version": 3,
+  "name": "Obsidian Developer Tool",
+  "description": "Developer tool",
+  "homepage_url": "http://obsidian.land",
+  "author": "Yasir Choudhury, Linda Zhao, Ali Fay, Anthony Guan, Yurii Shchyrba",
+  "devtools_page": "devtools.html"
+}
