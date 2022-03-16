@@ -21,22 +21,25 @@ const TimeGraph = (props) => {
     }
 
     const data = {
-        labels: [0, 1, 2 ,3 ,4 ,5, 6, 7, 8, 9, 10],
+        labels: [...Array(Math.max(querySpeed.length, mutationSpeed.length)).keys()],
         datasets: [
             {label: "Queries",
             data: querySpeed,
-            borderColor: "rgba(75,192,192,1)"
+            lineTension: 0.4,
+            borderColor: "rgba(75,192,192,1)",
+            responsive: true
         },
         {label: "Mutations",
             data: mutationSpeed,
-            borderColor: "#742774"
+            lineTension: 0.4,
+            borderColor: "#742774",
+            responsive: true
         }]
     }
-    console.log(querySpeed)
 
     return (
         <div>
-            <Line data = {data} options ={
+            <Line data = {data} options={
                 {plugins:{
                     legend: { 
                         display: true, 
@@ -45,8 +48,10 @@ const TimeGraph = (props) => {
                     title: {
                         display:true, 
                         text:'Response Time', 
-                    }},   
-                }}/>
+                    },
+                    }
+                }
+            }/>
         </div>
     )
 }
