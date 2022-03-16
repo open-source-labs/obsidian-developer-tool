@@ -21,16 +21,30 @@ const QueryOutput = (props) => {
   };
 
   useEffect(() => {
-    let str = '';
-    for (let i = 0; i < props.data.length; i++) {
-      str += 'Data ' + (i + 1) + ' \n';
-      for (let key in props.data[i]) {
-        str += key + ' : ' + props.data[i].key + '\n';
-      }
-      str += '\n';
-    }
-    setOutput(str);
+    setOutput(formatter(props.data));
   }, [props.data]);
+
+  const formatter = (data) =>{
+    let str = '';
+    if(Array.isArray(data)){
+      str+='[\n';
+      for( let i = 0; i < data.length; i++){
+        str+=formatter(data[i]);
+      }
+      str+=']\n';
+    }
+    else if(typeof data === 'object'){
+      str+='{\n';
+      for(const key in data){
+        str+= key + ' : ';
+        str+= formatter(data[key]);
+      }
+      str+='}\n';
+    } else {
+      str+= data +'\n';
+    }
+    return str;
+  }
 
   return (
     <div className='queryOutput' style={editorStyle}>
