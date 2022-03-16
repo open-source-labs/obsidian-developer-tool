@@ -21,7 +21,7 @@ const QueryOutput = (props) => {
   };
 
   useEffect(() => {
-    setOutput(formatter(props.data));
+    setOutput(JSON.stringify(props.data));
   }, [props.data]);
 
   const formatter = (data) =>{
