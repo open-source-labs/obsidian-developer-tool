@@ -10,24 +10,24 @@ import 'codemirror/theme/xq-light.css';
 
 //component for graphQL query input within the Playground
 const QueryInput = (props) => {
-  const [query, setQuery] = useState('# Write your GraphQL query here \n');
+  const [query, setQuery] = useState('');
 
-  //can use t = performance.now();
-
-  //function for handling submission of a query
-  const handleQuerySubmit = () => {
-    //query submit logic here
-    //POST request using the graphql endpoint as our fetch url
+  const onGetData = () => {
+    // console.log('In get Data');
+    //console.log(query);
+    props.handleGetData(query);
   };
 
   const editorStyle = {
     border: '1px outset',
     width: '50vw',
     fontSize: '14px',
+    borderRadius: '10px',
   };
 
   return (
     <div className='queryInput' style={editorStyle}>
+      <div># Write your GraphQL query here</div>
       <CodeMirror
         value={query}
         options={{
@@ -40,7 +40,9 @@ const QueryInput = (props) => {
         }}
       />
       <div className='querySubmit' style={{ textAlign: 'center' }}>
-        <button id='query-submit-button'>Get Data</button>
+        <button id='query-submit-button' onClick={onGetData}>
+          Get Data
+        </button>
       </div>
     </div>
   );
