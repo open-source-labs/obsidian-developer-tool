@@ -1,3 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
 #header {
     position: absolute;
     width: 220px;
@@ -37,6 +45,8 @@
     padding: 0 20px;
     color: #000;
     font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   #header .pro-sidebar-inner .pro-sidebar-layout ul {
     padding: 0 5px;
@@ -61,7 +71,10 @@
     padding: 20px;
   }
 
+<<<<<<< HEAD
   
+=======
+>>>>>>> dev
   @media only screen and (max-width: 720px) {
     html {
       overflow: hidden;

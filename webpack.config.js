@@ -51,6 +51,7 @@ module.exports = {
         }
       }
     ],
+    
   },
   plugins: [
     new CopyWebpackPlugin({
