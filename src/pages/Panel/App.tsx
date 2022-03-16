@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Header from "./Components/AppBar";
-import Playground from './Components/Playground'
-import Cache from './Components/Routes/Cache'
-import Performance from  './Components/Routes/Performance'
+import Playground from './Components/Routes/Playground.js' 
+import Cache from './Components/Routes/Cache.js'
+import Performance from  './Components/Routes/Performance.js'
 
 
 

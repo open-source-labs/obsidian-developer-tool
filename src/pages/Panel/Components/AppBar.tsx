@@ -9,7 +9,6 @@ import {
 } from "react-pro-sidebar";
 
 
-
 import { FiHome, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 import { BiCog } from "react-icons/bi";
 import {MdExplore} from "react-icons/Md"
@@ -17,9 +16,9 @@ import {GoDatabase} from 'react-icons/Go'
 import {GrDocumentPerformance} from 'react-icons/Gr'
 
 
-
 import "react-pro-sidebar/dist/css/styles.css";
 import "./AppBar.css";
+
 
 type Props = {
     count: number

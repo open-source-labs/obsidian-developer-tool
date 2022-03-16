@@ -19,9 +19,13 @@
     "author": "Obsidian",
     "license": "MIT",
     "dependencies": {
+        "@codemirror/lang-javascript": "github:codemirror/lang-javascript",
+        "@codemirror/state": "^0.19.9",
+        "@codemirror/view": "^0.19.47",
         "@mui/icons-material": "^5.5.0",
         "@mui/material": "^5.5.0",
         "@types/chrome": "^0.0.172",
+        "@uiw/react-codemirror": "^4.5.1",
         "chart.js": "^3.7.1",
         "graphql": "^16.3.0",
         "graphql-tag": "^2.12.6",
