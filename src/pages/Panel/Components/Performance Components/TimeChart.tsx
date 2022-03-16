@@ -4,33 +4,20 @@ import { Chart, registerables } from "chart.js"
 Chart.register(...registerables)
 
 const TimeGraph = (props) => {
-    const allData = props.data
-    const querySpeed = []
-    const queryName = []
-    const mutationSpeed = []
-    const mutationName = [];
-
-    for (let i=0; i<allData.length; i++){
-        if (allData[i].request.postData.text.split('').slice(10,15).join('') === 'query'){
-            querySpeed.push(allData[i].time)
-            queryName.push(allData[i].request.url)
-        }else {
-            mutationSpeed.push(allData[i].time)
-            mutationName.push(allData[i].request.url)
-        }
-    }
+    const queryTime = props.queryTime
+    const mutationTime = props.mutationTime
 
     const data = {
-        labels: [...Array(Math.max(querySpeed.length, mutationSpeed.length)).keys()],
+        labels: [...Array(Math.max(queryTime.length, mutationTime.length)).keys()],
         datasets: [
             {label: "Queries",
-            data: querySpeed,
+            data: queryTime,
             lineTension: 0.4,
             borderColor: "rgba(75,192,192,1)",
             responsive: true
         },
         {label: "Mutations",
-            data: mutationSpeed,
+            data: mutationTime,
             lineTension: 0.4,
             borderColor: "#742774",
             responsive: true
