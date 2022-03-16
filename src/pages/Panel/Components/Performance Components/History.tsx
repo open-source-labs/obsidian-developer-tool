@@ -30,6 +30,28 @@ const History = () => {
         logs.push(<Log id={historyData[i].startedDateTime} type={queryType} url={historyData[i].request.url} date={stringDate}/>)
     }
 
+		// listen for response times sent from front-end application
+		chrome.runtime.onMessageExternal.addListener(function(request, sender, sendResponse) {
+			if (request['cacheMissResponseTime']) {
+				console.log('Here\'s the cacheMissResponseTime: ', request.cacheMissResponseTime, 'ms')
+			}
+			if (request['cacheHitResponseTime']) {
+				console.log('Here\'s the cacheHitResponseTime: ', request.cacheHitResponseTime, 'ms')
+			}
+			if (request['deleteMutationResponseTime']) {
+				console.log('Here\'s the deleteMutationResponseTime: ', request.deleteMutationResponseTime, 'ms')
+			}
+			if (request['addOrUpdateMutationResponseTime']) {
+				console.log('Here\'s the addOrUpdateMutationResponseTime: ', request.addOrUpdateMutationResponseTime, 'ms')
+			}
+			if (request['query']) {
+				console.log('Here\'s the query: ', request.query);
+			}
+			if (request['mutation']) {
+				console.log('Here\'s the mutation: ', request.mutation);
+			}
+		})
+
     return (
         <div id='history-container'>
         <div id='log-container'>
