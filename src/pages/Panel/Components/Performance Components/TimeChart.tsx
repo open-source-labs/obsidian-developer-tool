@@ -6,20 +6,25 @@ Chart.register(...registerables)
 const TimeGraph = (props) => {
     const queryTime = props.queryTime
     const mutationTime = props.mutationTime
-
+    console.log('Props in TimeGraph')
+    console.log(props)
     const data = {
         labels: [...Array(Math.max(queryTime.length, mutationTime.length)).keys()],
         datasets: [
             {label: "Queries",
             data: queryTime,
             lineTension: 0.4,
-            borderColor: "rgba(75,192,192,1)",
+            fill: true,
+            borderColor: "#FE2C55",
+            backgroundColor: "rgba(254, 44, 86, 0.1)",
             responsive: true
         },
         {label: "Mutations",
             data: mutationTime,
             lineTension: 0.4,
-            borderColor: "#742774",
+            fill:true,
+            borderColor: "#25F4EE",
+            backgroundColor:"rgba(37, 244, 237, 0.1)",
             responsive: true
         }]
     }
