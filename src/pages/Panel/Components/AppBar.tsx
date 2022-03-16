@@ -36,7 +36,6 @@ const Header = (props:Props) => {
 
   return (
     <>
-      <div id="header">
         <ProSidebar collapsed={menuCollapse}>
             
           <SidebarHeader>
@@ -67,7 +66,6 @@ const Header = (props:Props) => {
             </Menu>
           </SidebarContent>
         </ProSidebar>
-      </div>
     </>
   );
 };
