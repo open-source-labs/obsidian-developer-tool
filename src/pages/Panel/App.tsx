@@ -13,19 +13,16 @@ const App = () => {
 
   
   return (
-    <> 
-    <div>
-     <Header count={count} setCount={setCount} />
-    </div>
+    <div style={{display: "flex", width: '100%', height: '100vh'}}> 
+     <Header count={count} setCount={setCount}/>
 
-     <div> 
      {(count===1) ? (
                 <Performance/>
               ) : (
              <div> </div>
               )}
       {(count===2) ? (
-                <Cache/>
+                <Cache style={{width: '100%'}}/>
               ) : (
              <div> </div>
               )}
@@ -35,8 +32,6 @@ const App = () => {
              <div> </div>
               )}
      </div>
-
-     </>
   );
 };
 
