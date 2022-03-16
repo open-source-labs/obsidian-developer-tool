@@ -21,15 +21,7 @@ const QueryOutput = (props) => {
   };
 
   useEffect(() => {
-    let str = '';
-    for (let i = 0; i < props.data.length; i++) {
-      str += 'Data ' + (i + 1) + ' \n';
-      for (let key in props.data[i]) {
-        str += key + ' : ' + props.data[i].key + '\n';
-      }
-      str += '\n';
-    }
-    setOutput(str);
+    setOutput(JSON.stringify(props.data));
   }, [props.data]);
 
   return (
