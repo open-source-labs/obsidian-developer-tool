@@ -13,8 +13,9 @@ const Cache = (props) => {
 		sendResponse
 	) {
 		if (request.cache) {
-			setCacheInfo(request.cache);
+			setCacheInfo(formatter(JSON.parse(request.cache)));
 			console.log("Here's the cache message: ", request.cache);
+			console.log("Here's the cache type: ", JSON.parse(request.cache));
 		}
 	});
 
@@ -34,36 +35,45 @@ const Cache = (props) => {
 	}
 
 	// STILL NEED TO FORMAT
-	// function formatter(data) {
-	// 	let str = '';
-	// 	if (Array.isArray(data)) {
-	// 		str += '[\n';
-	// 		for (let i = 0; i < data.length; i++) {
-	// 			str += formatter(data[i]);
-	// 		}
-	// 		str += ']\n';
-	// 	} else if (typeof data === 'object') {
-	// 		str += '{\n';
-	// 		for (const key in data) {
-	// 			str += key + ' : ';
-	// 			str += formatter(data[key]);
-	// 		}
-	// 		str += '}\n';
-	// 	} else {
-	// 		str += data + '\n';
-	// 	}
-	// 	return str;
-	// }
+	function formatter(data) {
+		let str = '';
+		if (Array.isArray(data)) {
+			str += '[\n';
+			for (let i = 0; i < data.length; i++) {
+				str += formatter(data[i]);
+			}
+			str += ']\n';
+		} else if (typeof data === 'object') {
+			str += '{\n';
+			for (const key in data) {
+				str += key + ' : ';
+				str += formatter(data[key]);
+			}
+			str += '}\n';
+		} else {
+			str += data + '\n';
+		}
+		return str;
+	}
 
 	return (
 		<>
-			<button onClick={() => handleClearCache()}>Clear Cache</button>
+			{/* <button onClick={() => handleClearCache()}>Clear Cache</button> */}
+			<button
+				type='button'
+				class='btn btn-primary position-fixed top-50 left-50'
+				onClick={() => handleClearCache()}
+				
+			>
+				Clear Cache
+			</button>
 			<CodeMirror
 				value={cacheInfo}
 				height='100%'
 				// width='100%'
 				//  position='absolute'
 				//  left='225px'
+				// marginTop
 				style={props.style}
 				extensions={[javascript({ jsx: true })]}
 				theme={oneDark}
@@ -71,7 +81,7 @@ const Cache = (props) => {
 					console.log('value:', value);
 				}}
 			/>
-			<div>{console.log(window.localStorage.getItem('context'))}</div>
+			{/* <div>{console.log(window.localStorage.getItem('context'))}</div> */}
 		</>
 	);
 };
