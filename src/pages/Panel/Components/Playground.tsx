@@ -25,6 +25,7 @@ const Playground = (props: any) => {
       })
       .then((response) =>{
         console.log('Response', response);
+        console.log(response);
         setData(response);
       } )
       .catch((err) => console.log(err));
