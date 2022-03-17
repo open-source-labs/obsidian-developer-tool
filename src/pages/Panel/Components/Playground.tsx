@@ -35,8 +35,12 @@ const Playground = (props: any) => {
     justifyContent: 'center',
   };
 
+  const playgroundStyle = {
+    backgroundColor: 'rgb(27, 27, 27)'
+  }
+
   return (
-    <div className='playground-container'>
+    <div className='playground-container' style={playgroundStyle}>
       <h1>{endpoint}</h1>
       <PlaygroundHeader onEndpointChange={onEndpointChange} />
       <div className='playground' style={ContainerStyle}>

@@ -31,7 +31,7 @@ const QueryInput = (props) => {
       <CodeMirror
         value={query}
         options={{
-          theme: 'xq-light',
+          theme: 'material-darker',
           lineNumbers: true,
           mode: 'graphql',
         }}
