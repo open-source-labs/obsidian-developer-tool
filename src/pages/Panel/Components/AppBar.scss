@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -6,10 +7,11 @@
 
 #header {
     position: absolute;
-    width: 220px;
   }
   #header .pro-sidebar {
     height: 100vh;
+    width: 200px !important;
+    min-width: 100%;
   }
   #header .closemenu {
     color: #000;
@@ -23,10 +25,7 @@
     top: 55px;
     cursor: pointer;
   }
-  #header .pro-sidebar {
-    width: 100%;
-    min-width: 100%;
-  }
+
   #header .pro-sidebar.collapsed {
     width: 80px;
     min-width: 80px;
@@ -68,6 +67,15 @@
   #header .logo {
     padding: 20px;
   }
+
+$sidebar-bg-color: black;
+
+$sidebar-width: 190px;
+
+$sidebar-color: rgb(146, 145, 145);
+
+@import '~react-pro-sidebar/dist/scss/styles.scss';
+
 
   @media only screen and (max-width: 720px) {
     html {
