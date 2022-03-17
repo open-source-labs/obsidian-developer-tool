@@ -54,7 +54,7 @@ const QueryOutput = (props) => {
       <CodeMirror
         value={output}
         options={{
-          theme: 'xq-light',
+          theme: 'material-darker',
           lineNumbers: false,
           mode: 'json',
         }}
