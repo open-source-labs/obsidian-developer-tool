@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './playground.css'
 
 const PlaygroundHeader = (props) => {
   const [inputValue, setValue] = useState('');
@@ -16,14 +17,17 @@ const PlaygroundHeader = (props) => {
     // console.log(e.target.value);
   };
 
-  const HeaderStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    paddingBottom: '35px',
-  };
+  // const HeaderStyle = {
+  //   display: 'flex',
+  //   justifyContent: 'center',
+  //   paddingBottom: '35px',
+  //   marginTop: '10px',
+  // };
+
+
 
   return (
-    <div className='playground-header' style={HeaderStyle}>
+    <div className='playground-header'>
       <input
         type='text'
         placeholder='Enter GraphQL endpoint here'

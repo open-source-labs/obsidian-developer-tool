@@ -31,22 +31,22 @@ const Playground = (props: any) => {
       .catch((err) => console.log(err));
   };
 
-  const ContainerStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-  };
+  // const ContainerStyle = {
+  //   display: 'flex',
+  //   justifyContent: 'center',
+  // };
 
-  const playgroundStyle = {
-    backgroundColor: 'rgb(27, 27, 27)'
-  }
+  // const playgroundStyle = {
+  //   backgroundColor: 'rgb(27, 27, 27)'
+  // }
 
   return (
-    <div className='playground-container' style={playgroundStyle}>
-      <h1>{endpoint}</h1>
+    <div className='playground-container'>
       <PlaygroundHeader onEndpointChange={onEndpointChange} />
-      <div className='playground' style={ContainerStyle}>
+      <h2>Current Endpoint: {endpoint}</h2>
+      <div className='playground'>
         <QueryInput handleGetData={handleGetData} />
-        <QueryOutput data={data}/>
+        <QueryOutput data={data} />
       </div>
     </div>
   );
