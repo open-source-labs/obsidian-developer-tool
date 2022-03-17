@@ -8,8 +8,6 @@ import './App.css'
 
 const App = () => {
   const [count, setCount] = useState<number>(0);
-
-
   
   return (
     <div style={{display: "flex", width: '100%', height: '100vh'}}> 
@@ -21,7 +19,7 @@ const App = () => {
              <div> </div>
               )}
       {(count===2) ? (
-                <Cache style={{width: '100%', backgroundColor:'rgb(27, 27, 27)'}}/>
+                <Cache style={{width: '100%', minHeight: '100%', backgroundColor:'rgb(27, 27, 27)'}}/>
               ) : (
              <div> </div>
               )}

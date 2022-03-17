@@ -8,4 +8,9 @@
       ],
       "@babel/preset-typescript"
     ]
+		// "plugins": [
+		// 	["transform-runtime", {
+		// 		"regenerator": true
+		// 	}]
+		// ]
   }

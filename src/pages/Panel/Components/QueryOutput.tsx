@@ -24,7 +24,7 @@ const QueryOutput = (props) => {
     setOutput(formatter(props.data,0));
   }, [props.data]);
 
-  const formatter = (data,spaces) =>{
+  const formatter = (data, spaces=0) =>{
     let str = '';
     if(Array.isArray(data)){
       str += '[\n';
