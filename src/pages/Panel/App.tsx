@@ -1,11 +1,10 @@
 import { useState } from "react";
 import Header from "./Components/AppBar";
-import Playground from './Components/Routes/Playground.js' 
-import Cache from './Components/Routes/Cache.js'
-import Performance from  './Components/Routes/Performance.js'
+import Playground from './Components/Playground' 
+import Cache from './Components/Routes/Cache'
+import Performance from "./Components/Performance Components/Performance";
 
-
-
+import './App.css'
 
 const App = () => {
   const [count, setCount] = useState<number>(0);
@@ -22,7 +21,7 @@ const App = () => {
              <div> </div>
               )}
       {(count===2) ? (
-                <Cache style={{width: '100%'}}/>
+                <Cache style={{width: '100%', backgroundColor:'rgb(27, 27, 27)'}}/>
               ) : (
              <div> </div>
               )}

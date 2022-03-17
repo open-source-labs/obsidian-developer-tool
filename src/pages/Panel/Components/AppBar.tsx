@@ -11,13 +11,13 @@ import {
 
 import { FiHome, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 import { BiCog } from "react-icons/bi";
-import {MdExplore} from "react-icons/Md"
+import {MdExplore, MdTrendingUp} from "react-icons/Md"
 import {GoDatabase} from 'react-icons/Go'
 import {GrDocumentPerformance} from 'react-icons/Gr'
 
 
 import "react-pro-sidebar/dist/css/styles.css";
-import "./AppBar.css";
+import "./AppBar.scss";
 
 
 type Props = {
@@ -59,7 +59,7 @@ const Header = (props:Props) => {
               <MenuItem active={false} icon={<FiHome />}>
                 Home
               </MenuItem>
-              <MenuItem onClick={() => props.setCount(props.count=1)} icon={<GrDocumentPerformance />}>Performance</MenuItem>
+              <MenuItem onClick={() => props.setCount(props.count=1)} icon={<MdTrendingUp />}>Performance</MenuItem>
               <MenuItem onClick={() => props.setCount(props.count=2)} icon={<GoDatabase />}>Cache</MenuItem>
               <MenuItem onClick={() => props.setCount(props.count=3)} icon={<MdExplore />}>Playground</MenuItem>
               <MenuItem onClick={() => props.setCount(props.count=4)} icon={<BiCog />}>Settings</MenuItem>

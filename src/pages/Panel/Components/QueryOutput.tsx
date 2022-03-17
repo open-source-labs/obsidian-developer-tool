@@ -21,27 +21,29 @@ const QueryOutput = (props) => {
   };
 
   useEffect(() => {
-    setOutput(formatter(props.data));
+    setOutput(formatter(props.data,0));
   }, [props.data]);
 
-  const formatter = (data) =>{
+  const formatter = (data,spaces) =>{
     let str = '';
     if(Array.isArray(data)){
-      str+='[\n';
+      str += '[\n';
+      spaces++;
       for( let i = 0; i < data.length; i++){
-        str+=formatter(data[i]);
+        str += ' '.repeat(spaces) + formatter(data[i],spaces + 1);
       }
-      str+=']\n';
+      str += ' '.repeat(spaces) + ']\n';
     }
     else if(typeof data === 'object'){
-      str+='{\n';
+      str += '{\n';
+      spaces++;
       for(const key in data){
-        str+= key + ' : ';
-        str+= formatter(data[key]);
+        str += ' '.repeat(spaces) + key + ' : ';
+        str += formatter(data[key], spaces + 1);
       }
-      str+='}\n';
+      str += ' '.repeat(spaces) + '}\n';
     } else {
-      str+= data +'\n';
+      str +=  data + '\n';
     }
     return str;
   }
@@ -52,7 +54,7 @@ const QueryOutput = (props) => {
       <CodeMirror
         value={output}
         options={{
-          theme: 'xq-light',
+          theme: 'material-darker',
           lineNumbers: false,
           mode: 'json',
         }}
