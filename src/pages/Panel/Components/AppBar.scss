@@ -12,7 +12,7 @@
   #header .pro-sidebar {
     height: 100vh;
     width: 20px !important;
-    min-width: 205px;
+    min-width: 205px;  
   }
   #header .closemenu {
     color: #000;
@@ -34,7 +34,6 @@
   #header .pro-sidebar-inner {
     background-color: white;
     box-shadow: 0.5px 0.866px 2px 0px rgba(0, 0, 0, 0.15);
-    
   }
   #header .pro-sidebar-inner .pro-sidebar-layout {
     overflow-y: hidden;
@@ -73,6 +72,7 @@
 $sidebar-bg-color: black;
 
 // $sidebar-width: 190px;
+
 
 $sidebar-color: rgb(146, 145, 145);
 

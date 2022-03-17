@@ -4,39 +4,34 @@ import { Chart, registerables } from "chart.js"
 Chart.register(...registerables)
 
 const TimeGraph = (props) => {
-    const allData = props.data
-    const querySpeed = []
-    const queryName = []
-    const mutationSpeed = []
-    const mutationName = [];
-
-    for (let i=0; i<allData.length; i++){
-        if (allData[i].request.postData.text.split('').slice(10,15).join('') === 'query'){
-            querySpeed.push(allData[i].time)
-            queryName.push(allData[i].request.url)
-        }else {
-            mutationSpeed.push(allData[i].time)
-            mutationName.push(allData[i].request.url)
-        }
-    }
-
+    const queryTime = props.queryTime
+    const mutationTime = props.mutationTime
+    console.log('Props in TimeGraph')
+    console.log(props)
     const data = {
-        labels: [0, 1, 2 ,3 ,4 ,5, 6, 7, 8, 9, 10],
+        labels: [...Array(Math.max(queryTime.length, mutationTime.length)).keys()],
         datasets: [
             {label: "Queries",
-            data: querySpeed,
-            borderColor: "rgba(75,192,192,1)"
+            data: queryTime,
+            lineTension: 0.4,
+            fill: true,
+            borderColor: "#FE2C55",
+            backgroundColor: "rgba(254, 44, 86, 0.1)",
+            responsive: true
         },
         {label: "Mutations",
-            data: mutationSpeed,
-            borderColor: "#742774"
+            data: mutationTime,
+            lineTension: 0.4,
+            fill:true,
+            borderColor: "#25F4EE",
+            backgroundColor:"rgba(37, 244, 237, 0.1)",
+            responsive: true
         }]
     }
-    console.log(querySpeed)
 
     return (
         <div>
-            <Line data = {data} options ={
+            <Line data = {data} options={
                 {plugins:{
                     legend: { 
                         display: true, 
@@ -45,8 +40,10 @@ const TimeGraph = (props) => {
                     title: {
                         display:true, 
                         text:'Response Time', 
-                    }},   
-                }}/>
+                    },
+                    }
+                }
+            }/>
         </div>
     )
 }

@@ -5,57 +5,48 @@ import PlaygroundHeader from './PlaygroundHeader';
 
 const Playground = (props: any) => {
   const [endpoint, setEndpoint] = useState('');
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
 
   const onEndpointChange = (e) => {
     setEndpoint(e);
   };
 
   const handleGetData = (query) => {
-    const str = endpoint + query;
-    // console.log('In parent component');
-    // console.log('Endpoint', endpoint);
-    // console.log('Query', query);
-    // console.log('Path', str);
-    // console.log('Length', str.length);
-    fetch(str)
-      .then((data) => data.json())
-      .then((messages) => {
-        const arr = messages.slice(0, 10);
-        console.log('Here is data witrh messages');
-        console.log(arr);
-        setData([...arr]);
+    fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        query: query,
+      }),
+    })
+      .then((data) =>{
+        if(!data) throw new Error('Omg no data');
+        return data.json();
       })
+      .then((response) =>{
+        console.log('Response', response);
+        console.log(response);
+        setData(response);
+      } )
       .catch((err) => console.log(err));
-
-    // fetch(endpoint, {
-    //   method: 'POST',
-    //   //mode: 'no-cors',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({
-    //     query: query,
-    //   }),
-    // })
-    //   .then((data) =>{
-    //     if(!data) throw new Error('Omg no data');
-    //     return data.json();
-    //   })
-    //   .then((response) => console.log('Response', response))
-    //   .catch((err) => console.log(err));
   };
 
-  const ContainerStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-  };
+  // const ContainerStyle = {
+  //   display: 'flex',
+  //   justifyContent: 'center',
+  // };
+
+  // const playgroundStyle = {
+  //   backgroundColor: 'rgb(27, 27, 27)'
+  // }
 
   return (
     <div className='playground-container'>
-      <h1>{endpoint}</h1>
       <PlaygroundHeader onEndpointChange={onEndpointChange} />
-      <div className='playground' style={ContainerStyle}>
+      <h2>Current Endpoint: {endpoint}</h2>
+      <div className='playground'>
         <QueryInput handleGetData={handleGetData} />
-        <QueryOutput data={data}/>
+        <QueryOutput data={data} />
       </div>
     </div>
   );

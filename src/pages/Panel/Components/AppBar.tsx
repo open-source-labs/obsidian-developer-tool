@@ -36,6 +36,7 @@ const Header = (props:Props) => {
 
   return (
     <>
+
        <div id="header">
         <ProSidebar collapsed={menuCollapse}>
             
