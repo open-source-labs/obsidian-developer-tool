@@ -8,7 +8,6 @@ import './App.css'
 
 const App = () => {
   const [count, setCount] = useState<number>(0);
-  
   return (
     <div style={{display: "flex", width: '100%', height: '100vh'}}> 
      <Header count={count} setCount={setCount}/>

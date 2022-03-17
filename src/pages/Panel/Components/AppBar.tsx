@@ -36,6 +36,8 @@ const Header = (props:Props) => {
 
   return (
     <>
+
+       <div id="header">
         <ProSidebar collapsed={menuCollapse}>
             
           <SidebarHeader>
@@ -56,9 +58,6 @@ const Header = (props:Props) => {
           </SidebarHeader>
           <SidebarContent>
             <Menu iconShape="square">
-              <MenuItem active={false} icon={<FiHome />}>
-                Home
-              </MenuItem>
               <MenuItem onClick={() => props.setCount(props.count=1)} icon={<MdTrendingUp />}>Performance</MenuItem>
               <MenuItem onClick={() => props.setCount(props.count=2)} icon={<GoDatabase />}>Cache</MenuItem>
               <MenuItem onClick={() => props.setCount(props.count=3)} icon={<MdExplore />}>Playground</MenuItem>
@@ -66,6 +65,7 @@ const Header = (props:Props) => {
             </Menu>
           </SidebarContent>
         </ProSidebar>
+        </div>
     </>
   );
 };
