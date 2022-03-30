@@ -4,7 +4,7 @@ import Log from './Log'
 const Mutations = (props) => {
     const logs = [];
     for (let i=0; i<props.data.length; i++){
-        logs.push(<Log name={`${i}. Mutation`} onClick={() => props.setGraphqlData(props.data[i])}/>)
+        logs.push(<Log key={`${i}.m`} name={`${i}. Mutation`} onClick={() => props.setGraphqlData(props.data[i])}/>)
     }
 
     return(
