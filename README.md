@@ -24,7 +24,7 @@ npm run build
 Then, in the Chrome Extensions Page (chrome://extensions/), toggle "Developer mode" on in the upper righthand corner, click on "Load unpacked" and navigate to /Obsidian-developer-tool/dist/ and click "Select". The extension should now be loaded and available within chrome developer tools.
 
 # Usage and Configuration
-Clone the Obsidian repository (link repo here), and in the Obsidian Wrapper file, update line ~10 chromeExtensionId to the value of the unique chrome extension ID for the tool you just unpacked in your extensions. That can be found (maybe insert image here)
+Clone the Obsidian repository [here](https://github.com/open-source-labs/obsidian), and in the Obsidian Wrapper file, update line ~10 chromeExtensionId to the value of the unique chrome extension ID for the tool you just unpacked in your extensions. That can be found (maybe insert image here)
 
 There is no further configuration necessary. As long as your application is using Obsidian Wrapper (imported as a path to the local file with the updated chrome extension) it will be able to retrieve cache data and query metrics on actions initiated in the app. 
 
