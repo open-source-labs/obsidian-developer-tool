@@ -31,14 +31,6 @@ const Playground = (props: any) => {
       .catch((err) => console.log(err));
   };
 
-  // const ContainerStyle = {
-  //   display: 'flex',
-  //   justifyContent: 'center',
-  // };
-
-  // const playgroundStyle = {
-  //   backgroundColor: 'rgb(27, 27, 27)'
-  // }
 
   return (
     <div className='playground-container'>
