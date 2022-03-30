@@ -70,12 +70,6 @@ describe('Unit testing React components', () => {
 
   describe('Playground Tab', () => {
     describe ('Endpoint submit button', () => {
-      // beforeEach(() => {
-      //   const props = {
-      //     onEndpointChange: jest.fn()
-      //   };
-      //   render(<PlaygroundHeader {...props} />)
-      // })
       test('Endpoint submit button invokes function on click', () => {
         const props = {
           onEndpointChange: jest.fn()

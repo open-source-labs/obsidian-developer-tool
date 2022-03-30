@@ -8,8 +8,9 @@ const PlaygroundHeader = (props) => {
     props.onEndpointChange(inputValue);
     setValue('');
   };
+  
   const sanitizeInput = (input) => {
-    return input.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+    return input.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;').replace(/\)/g, '&parens;');
   }
 
   const onChange = (e) => {
