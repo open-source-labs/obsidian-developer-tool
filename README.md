@@ -40,10 +40,10 @@ Navigate to this tab to see the data currently in your client-side cache based o
 
 In order to use this feature, you must plug in your server's GraphQL endpoint (ex. http://localhost:3000/graphQL) and click the submit button. You will now be able to write queries as well as mutations in order to retrieve and view your data. 
 
-Usage Note
+**Usage Note:**
 Use of this developer tool requires Obsidian version 5.0 or greater.
 
-More information
+**More information:**
 For more on Obsidian and Obsidian Demo, see their documentation:
 
 @Obsidian README
