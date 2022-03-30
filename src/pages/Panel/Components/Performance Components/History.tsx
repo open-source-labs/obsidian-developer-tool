@@ -3,7 +3,6 @@ import Mutations from "./Mutations"
 import Queries from "./Queries"
 import { Routes, Route } from 'react-router-dom'
 
-
 const History = (props) => {
     return (
         <div id='history'>

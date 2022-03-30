@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { oneDark } from '@codemirror/theme-one-dark';
+import { formatter } from '../formatter';
 
 const Cache = (props) => {
 	const [cacheInfo, setCacheInfo] = useState('');
@@ -49,32 +50,8 @@ const Cache = (props) => {
 		});
 	}
 
-	// STILL NEED TO FORMAT
-	const formatter = (data, spaces = 0) => {
-		let str = '';
-		if (Array.isArray(data)) {
-			str += '[\n';
-			spaces++;
-			for (let i = 0; i < data.length; i++) {
-				str += ' '.repeat(spaces) + formatter(data[i], spaces + 1);
-			}
-			str += ' '.repeat(spaces) + ']\n';
-		} else if (typeof data === 'object') {
-			str += '{\n';
-			spaces++;
-			for (const key in data) {
-				str += ' '.repeat(spaces) + key + ' : ';
-				str += formatter(data[key], spaces + 1);
-			}
-			str += ' '.repeat(spaces) + '}\n';
-		} else {
-			str += data + '\n';
-		}
-		return str;
-	};
-
 	return (
-		<div class='position-relative vh-100 w-100'>
+		<div id='cache' class='position-relative vh-100 w-100'>
 			{/* <button onClick={() => handleClearCache()}>Clear Cache</button> */}
 			<button
 				type='button'

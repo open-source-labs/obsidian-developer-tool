@@ -7,27 +7,20 @@ import 'codemirror-graphql/mode';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material-darker.css';
 import 'codemirror/theme/xq-light.css';
+import './playground.css';
 
 //component for graphQL query input within the Playground
 const QueryInput = (props) => {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState('');// React hook for inserted query/mutation 
 
   const onGetData = () => {
-    // console.log('In get Data');
-    //console.log(query);
     props.handleGetData(query);
   };
 
-  const editorStyle = {
-    border: '1px outset',
-    width: '50vw',
-    fontSize: '14px',
-    borderRadius: '10px',
-  };
 
   return (
-    <div className='queryInput' style={editorStyle}>
-      <div># Write your GraphQL query here</div>
+    <div className='queryInput'>
+      <div className="head-text"># Write your GraphQL query here</div>
       <CodeMirror
         value={query}
         options={{
