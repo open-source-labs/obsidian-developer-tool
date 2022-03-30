@@ -9,23 +9,31 @@ import Log from '../src/pages/Panel/Components/Performance Components/Log.tsx';
 
 describe('Unit testing React components', () => {
     describe('Side Bar', () => {
-      const props = {
+      test('Header is mounted', () => {
+        const props = {
         count: 1,
         setCount: jest.fn()
       }
       render (<Header {...props}/>)
+      const header = screen.getAllByText('Obsidian Developer Tool')
+      expect(header.length === 1)
+      })
     });
 
   describe('Performance Tab', () => {
     //check amount of queries and mutation
     test('Number of query log components responds to number of query messages', () => {
       const props = {
-        data: ['beans'],
+        data: ['beans', 2, 3],
         setGraphqlData: jest.fn(),
       };
       const test = render(<Queries {...props} />);
-      const logs = screen.getAllByText('0. Query');
-      expect(logs.length).toBe(1);
+      const logs0 = screen.getAllByText('0. Query');
+      expect(logs0.length).toBe(1);
+      const logs1 = screen.getAllByText('1. Query');
+      expect(logs1.length).toBe(1);
+      const logs2 = screen.getAllByText('2. Query');
+      expect(logs2.length).toBe(1);
     });
     //check to see if graphql click event listener is activated
     test('Log functions invoked on click', () => {
@@ -42,7 +50,22 @@ describe('Unit testing React components', () => {
     });
   });
 
-  describe('Playground Tab', () => {});
+  describe('Playground Tab', () => {
+    describe ('Endpoint submit button', () => {
+      beforeAll (() => {
+      const props = {
+        onEndpointChange = jest.fn()
+
+      }
+      });
+      test('Endpoint submit button invokes function on click', () => {
+
+      })
+      test('Input value reset after clicking endpoint submit button', () => {
+  
+      })
+    })
+  });
 
   describe('Cache Tab', () => {});
 });
