@@ -6,6 +6,24 @@ import regeneratorRuntime from 'regenerator-runtime';
 import Header from '../src/pages/Panel/Components/AppBar.tsx';
 import Queries from '../src/pages/Panel/Components/Performance Components/Queries.tsx';
 import Log from '../src/pages/Panel/Components/Performance Components/Log.tsx';
+import Playground from '../src/pages/Panel/Components/Playground';
+import PlaygroundHeader from '../src/pages/Panel/Components/PlaygroundHeader';
+
+document.createRange = () => {
+  const range = new Range();
+
+  range.getBoundingClientRect = jest.fn();
+
+  range.getClientRects = () => {
+    return {
+      item: () => null,
+      length: 0,
+      [Symbol.iterator]: jest.fn()
+    };
+  };
+
+  return range;
+}
 
 describe('Unit testing React components', () => {
     describe('Side Bar', () => {
@@ -42,7 +60,22 @@ describe('Unit testing React components', () => {
     });
   });
 
-  describe('Playground Tab', () => {});
+  describe('Playground Tab', () => {
+
+    let wrapper;
+
+    beforeEach(() => {
+      wrapper = render(<Playground />)
+    })
+
+    test('Playground input field',  ()=>{
+      userEvent.type((screen.getByText('Submit')).previousSibling, 'http://localhost:8000/graphql');
+      userEvent.click(screen.getByText('Submit'));
+      expect(screen.getByRole('heading').textContent).toBe('Current Endpoint: http://localhost:8000/graphql');
+    });
+
+
+  });
 
   describe('Cache Tab', () => {});
 });
