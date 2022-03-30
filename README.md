@@ -26,7 +26,7 @@ Then, in the Chrome Extensions Page (chrome://extensions/), toggle "Developer mo
 # Usage and Configuration
 Clone the Obsidian repository [here](https://github.com/open-source-labs/obsidian), and in the Obsidian Wrapper file, on line 10, update ```chromeExtensionId``` to the value of the unique chrome extension ID for the tool you just unpacked in your extensions. This can be found at chrome://extensions/ on the card for your loaded extension.
 
-There is no further configuration necessary. As long as your application is using Obsidian Wrapper (imported as a path to the local file with the updated chrome extension) it will be able to retrieve cache data and query metrics on actions initiated in the app. 
+There is no further configuration necessary. As long as your application is using Obsidian Wrapper (imported as a path to the local file with the updated chrome extension), the devtool will be able to retrieve cache data and query metrics on actions initiated in the app. 
 
 **Performance:** <br/>
 Navigate to this tab if you would like to visualize the response time of your GraphQL queries. You can access a log of your queries and mutations, as well as the corresponding response time data. Here you can see the lower response times on subsequent queries for the same data - Obsidian's caching strategies at work! 
