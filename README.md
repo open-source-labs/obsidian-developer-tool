@@ -1,5 +1,4 @@
 # obsidian-developer-tool
-<h1>
 
 The Obsidian Developer Tool is an easy-to-use Chrome Developer Tools extension designed for applications using Obsidian. With this extension, users can:
 
