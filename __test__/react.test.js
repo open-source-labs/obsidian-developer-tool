@@ -6,8 +6,9 @@ import regeneratorRuntime from 'regenerator-runtime';
 import Header from '../src/pages/Panel/Components/AppBar.tsx';
 import Queries from '../src/pages/Panel/Components/Performance Components/Queries.tsx';
 import Log from '../src/pages/Panel/Components/Performance Components/Log.tsx';
-import PlaygroundHeader from '../src/pages/Panel/Components/PlaygroundHeader.tsx'
 
+import Playground from '../src/pages/Panel/Components/Playground';
+import PlaygroundHeader from '../src/pages/Panel/Components/PlaygroundHeader';
 
 document.createRange = () => {
   const range = new Range();
@@ -69,7 +70,22 @@ describe('Unit testing React components', () => {
   });
 
   describe('Playground Tab', () => {
-    describe ('Endpoint submit button', () => {
+
+    test('Playground input field',  ()=>{
+      render(<Playground />)
+      userEvent.type((screen.getByText('Submit')).previousSibling, 'http://localhost:8000/graphql');
+      userEvent.click(screen.getByText('Submit'));
+      expect(screen.getByRole('heading').textContent).toBe('Current Endpoint: http://localhost:8000/graphql');
+    });
+    
+    test('Playground security test for harmful characters',  ()=>{
+      render(<Playground />)
+      userEvent.type((screen.getByText('Submit')).previousSibling, 'harmful characters " ) & < ');
+      userEvent.click(screen.getByText('Submit'));
+      expect(screen.getByRole('heading').textContent).toBe('Current Endpoint: harmful characters &quot; &parens; &amp; &lt;');
+    });
+
+
       test('Endpoint submit button invokes function on click', () => {
         const props = {
           onEndpointChange: jest.fn()
@@ -80,7 +96,7 @@ describe('Unit testing React components', () => {
         expect(props.onEndpointChange).toHaveBeenCalledTimes(1);
         userEvent.click(button);
         expect(props.onEndpointChange).toHaveBeenCalledTimes(2);
-      })
+      });
 
       test('Input value initially set to empty string with placeholder', () => {
         const props = {
@@ -90,7 +106,8 @@ describe('Unit testing React components', () => {
        const input = screen.getAllByDisplayValue('')
        expect(input.length).toBe(1)
        expect(input[0].getAttribute('placeholder')).toBe('Enter GraphQL endpoint here')
-      })
+      });
+
       test('Input value changes with typing', () => {
         const props = {
           onEndpointChange: jest.fn()
@@ -101,6 +118,7 @@ describe('Unit testing React components', () => {
        const newInput = screen.getAllByDisplayValue('hello')
        expect(newInput.length).toBe(1)
       });
+
       test('Input value resets after button click', () => {
         const props = {
           onEndpointChange: jest.fn()
@@ -121,6 +139,5 @@ describe('Unit testing React components', () => {
        const oldInput = screen.queryAllByDisplayValue('hello')
        expect(oldInput.length).toBe(0)
       });
-    })
   });
 });
