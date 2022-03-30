@@ -45,5 +45,5 @@ Use of this developer tool requires Obsidian version 5.0 or greater.
 
 # More information:
 Obsidian and Obsidian demo documentation: 
-[Obsidian](https://github.com/open-source-labs/obsidian) 
-[Obsidian Demo](https://github.com/oslabs-beta/obsidian-demo-5.0) 
+* [Obsidian](https://github.com/open-source-labs/obsidian) 
+* [Obsidian Demo](https://github.com/oslabs-beta/obsidian-demo-5.0) 
