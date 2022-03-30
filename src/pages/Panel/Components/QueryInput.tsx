@@ -14,17 +14,9 @@ const QueryInput = (props) => {
   const [query, setQuery] = useState('');
 
   const onGetData = () => {
-    // console.log('In get Data');
-    //console.log(query);
     props.handleGetData(query);
   };
 
-  // const editorStyle = {
-  //   border: '1px outset',
-  //   width: '50vw',
-  //   fontSize: '14px',
-  //   borderRadius: '10px',
-  // };
 
   return (
     <div className='queryInput'>

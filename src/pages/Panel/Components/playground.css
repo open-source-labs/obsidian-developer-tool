@@ -12,6 +12,8 @@
   border-radius: 10px;
   margin-right: 10px;
   margin-top: 20px;
+  min-height: 75vh;
+  height: auto;
 }
 
 .queryOutput {
@@ -57,7 +59,7 @@
 
 input {
   width: 50vh;
-  height: 30px;
+  height: 33px;
   padding: 5px 5px 5px 5px;
   border: none;
   margin-right: 5px;
@@ -67,4 +69,12 @@ input {
 h2 {
   text-align: center;
   color: #25f4ee;
+  font-size: 18px;
+}
+
+#query-submit-button {
+  position: relative;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
