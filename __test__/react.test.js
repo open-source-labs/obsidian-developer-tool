@@ -73,6 +73,12 @@ describe('Unit testing React components', () => {
       userEvent.click(screen.getByText('Submit'));
       expect(screen.getByRole('heading').textContent).toBe('Current Endpoint: http://localhost:8000/graphql');
     });
+    
+    test('Playground security test for harmful characters',  ()=>{
+      userEvent.type((screen.getByText('Submit')).previousSibling, 'harmful characters " ) & < ');
+      userEvent.click(screen.getByText('Submit'));
+      expect(screen.getByRole('heading').textContent).toBe('Current Endpoint: harmful characters &quot; &parens; &amp; &lt;');
+    });
 
 
   });

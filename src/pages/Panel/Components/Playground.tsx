@@ -3,6 +3,7 @@ import QueryInput from './QueryInput';
 import QueryOutput from './QueryOutput';
 import PlaygroundHeader from './PlaygroundHeader';
 
+//Component to play with your GQL data (to see how your queries looks like without need to directly manipulate with web application)
 const Playground = (props: any) => {
   const [endpoint, setEndpoint] = useState('');
   const [data, setData] = useState({});
@@ -11,6 +12,8 @@ const Playground = (props: any) => {
     setEndpoint(e);
   };
 
+  //function that makes fetch request to GQL endpoint with entered query/mutation 
+  //Be careful with mutation as it makes direct impact on your DB 
   const handleGetData = (query) => {
     fetch(endpoint, {
       method: 'POST',
