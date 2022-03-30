@@ -21,7 +21,7 @@ npm install
 npm run build
 ```
 
-Then, in the Chrome Extensions Page (chrome://extensions/), toggle "Developer mode" on in the upper righthand corner, click on "Load unpacked" and navigate to /Obsidian-developer-tool/dist/ and click "Select". The extension should now be loaded and available in the Chrome Developer Tools.
+Then, in the Chrome Extensions Page (chrome://extensions/), toggle "Developer mode" on in the upper righthand corner, click on "Load unpacked" and navigate to /Obsidian-developer-tool/dist/ and click "Select". The extension should now be loaded and available within chrome developer tools.
 
 # Usage and Configuration
 Clone the Obsidian repository (link repo here), and in the Obsidian Wrapper file, update line ~10 chromeExtensionId to the value of the unique chrome extension ID for the tool you just unpacked in your extensions. That can be found (maybe insert image here)
