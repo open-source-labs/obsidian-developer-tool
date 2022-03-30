@@ -39,7 +39,6 @@ const Performance = () => {
         if (request['addOrUpdateMutationResponseTime']) setMutationTimeData([...mutationTimeData, request.addOrUpdateMutationResponseTime])
         if (request['query']) setQueryData([...queryData, request.query])
         if (request['mutation']) setMutationData([...mutationData, request.mutation])
-        console.log(request)
     })
 
     return (

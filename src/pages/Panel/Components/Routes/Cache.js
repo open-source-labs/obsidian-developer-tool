@@ -66,7 +66,7 @@ const Cache = (props) => {
 	};
 
 	return (
-		<div class='position-relative vh-100 w-100'>
+		<div id='cache' class='position-relative vh-100 w-100'>
 			{/* <button onClick={() => handleClearCache()}>Clear Cache</button> */}
 			<button
 				type='button'
