@@ -8,11 +8,13 @@ const PlaygroundHeader = (props) => {
     props.onEndpointChange(inputValue);
     setValue('');
   };
+  const sanitizeInput = (input) => {
+    return input.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+  }
 
   const onChange = (e) => {
-    setValue(e.target.value);
+    setValue(sanitizeInput(e.target.value));
   };
-
 
   return (
     <div className='playground-header'>

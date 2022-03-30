@@ -25,6 +25,11 @@
 }
 
 .CodeMirror-scroll {
-	overflow-y: hidden;
-	overflow-x: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#cache {
+	height: 100vh;
+	overflow-y: auto;
 }
