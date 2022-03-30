@@ -99,7 +99,7 @@ describe('Unit testing React components', () => {
        const input = screen.getAllByDisplayValue('')
        expect(input.length).toBe(1)
 
-       userEvent.type(input, 'hello')
+       userEvent.type(screen.getByDisplayValue(''), 'hello')
        const testInput = screen.getAllByDisplayValue('')
        expect(testInput.length).toBe(0)
        const newInput = screen.getAllByDisplayValue('hello')
