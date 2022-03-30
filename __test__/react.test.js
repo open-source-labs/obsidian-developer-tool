@@ -100,7 +100,7 @@ describe('Unit testing React components', () => {
        expect(input.length).toBe(1)
 
        userEvent.type(screen.getByDisplayValue(''), 'hello')
-       const testInput = screen.getAllByDisplayValue('')
+       const testInput = screen.queryAllByDisplayValue('')
        expect(testInput.length).toBe(0)
        const newInput = screen.getAllByDisplayValue('hello')
        expect(newInput.length).toBe(1)
@@ -108,7 +108,7 @@ describe('Unit testing React components', () => {
        userEvent.click(button);
        const clickInput = screen.getAllByDisplayValue('')
        expect(clickInput.length).toBe(1)
-       const oldInput = screen.getAllByDisplayValue('hello')
+       const oldInput = screen.queryAllByDisplayValue('hello')
        expect(oldInput.length).toBe(0)
       });
     })
