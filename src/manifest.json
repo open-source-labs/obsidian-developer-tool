@@ -5,6 +5,10 @@
   "homepage_url": "http://obsidian.land",
   "author": "Yasir Choudhury, Linda Zhao, Ali Fay, Anthony Guan, Yurii Shchyrba",
 	"devtools_page": "devtools.html",
+	"content_scripts": [{
+		"matches": ["http://localhost:3000/*", "https://localhost:3000/*", "http://localhost:8000/*", "https://localhost:8000/*"],
+		"js": ["main.bundle.js"]
+	}],
 	"permissions": [
     "storage"
   ],

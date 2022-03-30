@@ -7,27 +7,33 @@ const Cache = (props) => {
 	const [cacheInfo, setCacheInfo] = useState('');
 
 	// listen for message from webpage
-	// chrome.runtime.onMessageExternal.addListener(function (
-	// 	request,
-	// 	sender,
-	// 	sendResponse
-	// ) {
-	// 	if (request.cache) {
-	// 		setCacheInfo(formatter(JSON.parse(request.cache)));
-	// 	}
-	// 	return true;
-	// });
+	chrome.runtime.onMessageExternal.addListener(function (
+		request,
+		sender,
+		sendResponse
+	) {
+		if (request.cache) {
+			setCacheInfo(formatter(JSON.parse(request.cache)));
+		}
+		return true;
+	});
 
 	// refactor with runtime.connect (long-lived connection)
-	chrome.runtime.onConnect.addListener(function (port) {
-		console.assert(port.name === 'cache');
-		port.onMessage.addListener(function (msg) {
-			if (msg.cache) {
-				console.log('Received the cache message')
-				setCacheInfo(formatter(JSON.parse(msg.cache)));
-			}
-		});
-	});
+	// chrome.runtime.onConnectExternal.addListener(function (port) {
+	// 	console.log('connected', port);
+	// 	console.assert(port.name === 'cache');
+	// 	port.onMessage.addListener(
+	// 		function (msg) {
+	// 			console.log("Here's the message: ", msg);
+	// 			setCacheInfo(formatter(JSON.parse(msg.cache)));
+	// 			// if (msg.cache) {
+	// 			// 	console.log('Received the cache message');
+	// 			// 	setCacheInfo(formatter(JSON.parse(msg.cache)));
+	// 			// }
+	// 		},
+	// 		{ passive: true }
+	// 	);
+	// });
 
 	function handleClearCache() {
 		// return chrome.runtime.sendMessage({ clearCache: true });

@@ -33,16 +33,15 @@ const Performance = () => {
 		// let count = 0;
 
     // listen for response times sent from front-end application
-    // chrome.runtime.onMessageExternal.addListener(function(request, sender, sendResponse) {
-    //     console.log('In the performance component, here\'s the count: ', count++)
-    //     if (request['cacheMissResponseTime']) setQueryTimeData([...queryTimeData, request.cacheMissResponseTime])
-    //     if (request['cacheHitResponseTime']) setQueryTimeData([...queryTimeData, request.cacheHitResponseTime]) 
-    //     if (request['deleteMutationResponseTime']) setMutationTimeData([...mutationTimeData, request.deleteMutationResponseTime])
-    //     if (request['addOrUpdateMutationResponseTime']) setMutationTimeData([...mutationTimeData, request.addOrUpdateMutationResponseTime])
-    //     if (request['query']) setQueryData([...queryData, request.query])
-    //     if (request['mutation']) setMutationData([...mutationData, request.mutation])
-		// 		// chrome.runtime.onMessageExternal.removeListener(setPerformanceTimes);
-    // })
+    chrome.runtime.onMessageExternal.addListener(function(request, sender, sendResponse) {
+			// chrome.runtime.onMessageExternal.removeListener(setPerformanceTimes);
+        if (request['cacheMissResponseTime']) setQueryTimeData([...queryTimeData, request.cacheMissResponseTime])
+        else if (request['cacheHitResponseTime']) setQueryTimeData([...queryTimeData, request.cacheHitResponseTime]) 
+        else if (request['deleteMutationResponseTime']) setMutationTimeData([...mutationTimeData, request.deleteMutationResponseTime])
+        else if (request['addOrUpdateMutationResponseTime']) setMutationTimeData([...mutationTimeData, request.addOrUpdateMutationResponseTime])
+        else if (request['query']) setQueryData([...queryData, request.query])
+        else if (request['mutation']) setMutationData([...mutationData, request.mutation])
+    })
 
     return (
         <div id='performance'>
