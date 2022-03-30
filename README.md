@@ -43,8 +43,7 @@ In order to use this feature, you must plug in your server's GraphQL endpoint (e
 **Usage Note:**
 Use of this developer tool requires Obsidian version 5.0 or greater.
 
-**More information:**
-For more on Obsidian and Obsidian Demo, see their documentation:
-
-@Obsidian README
-@Obsidian demo README
+# More information:
+Obsidian and Obsidian demo documentation: 
+[Obsidian](https://github.com/open-source-labs/obsidian) 
+[Obsidian Demo](https://github.com/oslabs-beta/obsidian-demo-5.0) 
