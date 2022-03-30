@@ -8,7 +8,8 @@ The Obsidian Developer Tool is an easy-to-use Chrome Developer Tools extension d
 
 These features require minimal configuration and are designed to cater to the needs of Obsidian developers utilizing Obsidian Wrapper in their applications.
 
-The Obsidian Developer Tool is an open-source developer tool accelerated by OS Labs and developed by Ali Fay, Yurii, Linda, Anthony, Yasir
+The Obsidian Developer Tool is an open-source developer tool accelerated by OS Labs and developed by Ali Fay, Yurii Shchyrba, Linda Zhao, Anthony Guan, Yasir Choudhury
+
 # Installation
 
 The Obsidian Developer Tool is currently under the review process to be launched on the Chrome Extension Store. In the meantime, the easiest way to use the developer tool is to build from source and manually add as a chrome extension. To build the latest version, exectue the following commands:
