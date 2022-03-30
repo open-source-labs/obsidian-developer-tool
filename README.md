@@ -1,6 +1,6 @@
 # obsidian-developer-tool
 
-The Obsidian Developer Tool is an easy-to-use Chrome Developer Tools extension designed for applications using Obsidian. With this extension, users can:
+The Obsidian Developer Tool is an easy-to-use chrome developer tool extension designed for applications using Obsidian. With this extension, users can:
 
 - visualize GraphQL query and cache performance metrics in order to see the impact of caching and the performance tradeoffs between various caching strategies
 - send dynamic queries/mutations to a user's database to allow rapid testing of and data retrieval from their graphQL schemas
