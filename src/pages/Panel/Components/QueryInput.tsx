@@ -11,7 +11,7 @@ import './playground.css';
 
 //component for graphQL query input within the Playground
 const QueryInput = (props) => {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState('');// React hook for inserted query/mutation 
 
   const onGetData = () => {
     props.handleGetData(query);
