@@ -15,13 +15,11 @@ The Obsidian Developer Tool is an open-source developer tool accelerated by OS L
 The Obsidian Developer Tool is currently under the review process to be launched on the Chrome Extension Store. In the meantime, the easiest way to use the developer tool is to build from source and manually add as a chrome extension. To build the latest version, execute the following commands:
 
 
-
+```
 git clone https://github.com/oslabs-beta/obsidian-developer-tool 
-
 npm install
-
 npm run build
-
+```
 
 Then, in the Chrome Extensions Page, (chrome://extensions/), toggle "Developer mode" on in the upper righthand corner of the page, click on "Load unpacked" and navigate to /Obsidian-developer-tool/dist/ and click "Select". The extension should now be loaded and available in the Chrome Developer Tools.
 
