@@ -40,9 +40,11 @@ In order to use this feature, you must plug in your server's GraphQL endpoint (e
 **Usage Note:**
 Use of this developer tool requires Obsidian version 5.0 or greater.
 
-<div><img src='./src/assets/gifs/performance.gif' width="80%"></div>
-<div><img src='./src/assets/gifs/cache.gif' width="80%"></div>
-<div><img src='./src/assets/gifs/playground.gif' width="80%"></div>
+<div style="display:inline-block">
+<img src='./src/assets/gifs/performance.gif' width="50%">
+<img src='./src/assets/gifs/cache.gif' width="50%">
+<img src='./src/assets/gifs/playground.gif' width="50%">
+</div>
 
 # More information:
 Obsidian and Obsidian demo documentation: 
