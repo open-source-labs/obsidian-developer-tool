@@ -32,7 +32,6 @@ const Performance = () => {
 
     // listen for response times sent from front-end application
     chrome.runtime.onMessageExternal.addListener(function(request, sender, sendResponse) {
-        console.log(request)
         if (request['cacheMissResponseTime']) setQueryTimeData([...queryTimeData, request.cacheMissResponseTime])
         if (request['cacheHitResponseTime']) setQueryTimeData([...queryTimeData, request.cacheHitResponseTime]) 
         if (request['deleteMutationResponseTime']) setMutationTimeData([...mutationTimeData, request.deleteMutationResponseTime])
