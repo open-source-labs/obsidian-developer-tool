@@ -6,8 +6,7 @@ Chart.register(...registerables)
 const TimeGraph = (props) => {
     const queryTime = props.queryTime
     const mutationTime = props.mutationTime
-    console.log('Props in TimeGraph')
-    console.log(props)
+    console.log('Here\'s the mutation data: ', mutationTime);
     const data = {
         labels: [...Array(Math.max(queryTime.length, mutationTime.length)).keys()],
         datasets: [
@@ -30,7 +29,7 @@ const TimeGraph = (props) => {
     }
 
     return (
-        <div>
+        <div className='w-100 h-auto'>
             <Line data = {data} options={
                 {plugins:{
                     legend: { 
@@ -46,6 +45,6 @@ const TimeGraph = (props) => {
             }/>
         </div>
     )
-}
+};
 
-export default TimeGraph
+export default TimeGraph;

@@ -34,6 +34,7 @@ const App = () => {
             width: '100%',
             minHeight: '100%',
             backgroundColor: 'rgb(27, 27, 27)',
+						fontSize: '12px'
           }}
 					cacheInfo={cacheInfo}
 					setCacheInfo={setCacheInfo}

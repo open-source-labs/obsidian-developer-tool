@@ -3,13 +3,13 @@
   background-color: rgb(27, 27, 27);
   color: white;
   width: 100%;
+	/* height: 100vh; */
   overflow-x: hidden;
   overflow-y: hidden;
 }
 
 #top-performance {
-  display: flex;
-  height: 60vh;
+  padding: 20px;
 }
 
 #performance-top-left {
@@ -77,13 +77,15 @@ a {
 #performance-header {
   display: flex;
   justify-content: space-between;
-  min-width: 240px;
+  /* min-width: 240px; */
+	width: 100%;
+	height: auto;
   border-bottom: 1px solid black;
   padding-bottom: 5px;
   margin-bottom: 3px;
   background-color: #000000;
   color: white;
-  padding: 5px 5px 5px 5px;
+	padding: 5px;
   margin: 5px;
   border-radius: 3px;
 }
@@ -95,7 +97,7 @@ a {
 .log {
   border: 1px solid rgb(56, 56, 56);
   box-shadow: 1px 1px black;
-  padding: 3px 3px 3px 3px;
+	padding: 3px;
   border-radius: 3px;
   margin: 3px;
   cursor: pointer;
@@ -107,8 +109,8 @@ a {
 }
 
 #bottom-performance {
-  height: 40vh;
+  height: 100%;
   overflow-y: scroll;
-  padding: 20px 20px 20px 20px;
-  border-top: 1px solid black;
+	padding: 20px;
+	border-top: 1px solid black;
 }

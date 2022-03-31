@@ -43,8 +43,14 @@ const Performance = () => {
 					chrome.runtime.onMessageExternal.removeListener(doStuff);
 					setQueryTimeData([...queryTimeData, request.cacheHitResponseTime]);
 				}
-        else if (request['deleteMutationResponseTime']) setMutationTimeData([...mutationTimeData, request.deleteMutationResponseTime])
-        else if (request['addOrUpdateMutationResponseTime']) setMutationTimeData([...mutationTimeData, request.addOrUpdateMutationResponseTime])
+        else if (request['deleteMutationResponseTime']) {
+					console.log('Here\'s the mutation data: ', request.deleteMutationResponseTime)
+					setMutationTimeData([...mutationTimeData, request.deleteMutationResponseTime]);
+				}
+        else if (request['addOrUpdateMutationResponseTime']) {
+					chrome.runtime.onMessageExternal.removeListener(doStuff);
+					setMutationTimeData([...mutationTimeData, request.addOrUpdateMutationResponseTime])
+				} 
         else if (request['query']) {
 					chrome.runtime.onMessageExternal.removeListener(doStuff);
 					setQueryData([...queryData, request.query])
@@ -58,22 +64,25 @@ const Performance = () => {
     return (
         <div id='performance'>
             <BrowserRouter>
-                <div id='top-performance'>
-                    <div id='performance-top-left'>
+						<div className='container-fluid' id='top-performance'>
+										<TimeGraph queryTime={queryTimeData} mutationTime={mutationTimeData}/>
+                </div>
+                <div id='bottom-performance'>
+                    {/* <div id='performance-top-left'> */}
                         <div>
                             <PerformanceHeader value={value} handleChange={handleChange}/>
                         </div>
                         <div>
+                    {graphqlData}
+
                             <History queryData={queryData} mutationData={mutationData} setGraphqlData={setGraphqlData}/>
                         </div>
-                    </div>
-                    <div id='performance-top-right'>
+                    {/* </div> */}
+                    {/* <div id='performance-top-right'>
                         <TimeGraph queryTime={queryTimeData} mutationTime={mutationTimeData}/>
-                    </div>
+                    </div> */}
                 </div>
-                <div id='bottom-performance'>
-                    {graphqlData}
-                </div>
+
             </BrowserRouter>
         </div>
     )

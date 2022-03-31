@@ -55,7 +55,7 @@ const Cache = (props) => {
 			{/* <button onClick={() => handleClearCache()}>Clear Cache</button> */}
 			<button
 				type='button'
-				class='btn btn-primary'
+				class='btn btn-primary btn-sm'
 				onClick={() => handleClearCache()}
 				id='clearCacheButton'
 			>
