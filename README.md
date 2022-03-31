@@ -30,16 +30,19 @@ There is no further configuration necessary. As long as your application is usin
 
 **Performance:** <br/>
 Navigate to this tab if you would like to visualize the response time of your GraphQL queries. You can access a log of your queries and mutations, as well as the corresponding response time data. Here you can see the lower response times on subsequent queries for the same data - Obsidian's caching strategies at work!
-<div><img src='./src/assets/gifs/performance.gif' width="50%"></div>
 
 **Cache:** <br/>
 Navigate to this tab to see the data currently in your client-side cache based on queries being made. All of the cached data will appear here, and you also have the ability to manually clear the cache with the 'clear cache' button. 
 
 **Playground:** <br/>
-In order to use this feature, you must plug in your server's GraphQL endpoint (ex. http://localhost:3000/graphQL) and click the submit button. You will now be able to write queries as well as mutations in order to retrieve and view your data. 
+In order to use this feature, you must plug in your server's GraphQL endpoint (ex. http://localhost:3000/graphQL) and click the submit button. You will now be able to write queries as well as mutations in order to retrieve and view your data.
 
 **Usage Note:**
 Use of this developer tool requires Obsidian version 5.0 or greater.
+
+<div><img src='./src/assets/gifs/performance.gif' width="50%"></div>
+<div><img src='./src/assets/gifs/cache.gif' width="50%"></div>
+<div><img src='./src/assets/gifs/playground.gif' width="50%"></div>
 
 # More information:
 Obsidian and Obsidian demo documentation: 
