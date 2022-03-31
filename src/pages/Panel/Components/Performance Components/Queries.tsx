@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Log from './Log'
 
+//component that displays query logs
 const Queries = (props) => {
     
     const logs = [];

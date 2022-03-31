@@ -3,6 +3,7 @@ import { Line } from "react-chartjs-2"
 import { Chart, registerables } from "chart.js"
 Chart.register(...registerables)
 
+//displays queries and mutations on graph
 const TimeGraph = (props) => {
     const queryTime = props.queryTime
     const mutationTime = props.mutationTime

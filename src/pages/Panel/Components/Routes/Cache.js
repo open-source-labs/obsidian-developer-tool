@@ -21,15 +21,8 @@ const Cache = (props) => {
 		return true;
 	});
 
-	// chrome.runtime.onConnect.addListener(function(port) {
-	// 	console.assert(port.name = 'cachePort');
-	// 	port.onMessage.addListener(function(msg) {
-	// 		if (msg = )
-	// 	})
-	// })
-
+		// allows us to clear the browser cache
 	function handleClearCache() {
-		// return chrome.runtime.sendMessage({ clearCache: true });
 		setCacheInfo(
 			formatter({
 				storage: { ROOT_QUERY: {}, ROOT_MUTATION: {} },
@@ -44,7 +37,7 @@ const Cache = (props) => {
 
 	return (
 		<div id='cache' class='position-relative vh-100 w-100'>
-			{/* <button onClick={() => handleClearCache()}>Clear Cache</button> */}
+			
 			<button
 				type='button'
 				class='btn btn-primary'
@@ -55,11 +48,6 @@ const Cache = (props) => {
 			</button>
 			<CodeMirror
 				value={cacheInfo}
-				// height='100%'
-				// width='100%'
-				//  position='absolute'
-				//  left='225px'
-				// marginTop
 				style={props.style}
 				extensions={[javascript({ jsx: true })]}
 				theme={oneDark}
@@ -67,7 +55,7 @@ const Cache = (props) => {
 					console.log('value:', value);
 				}}
 			/>
-			{/* <div>{console.log(window.localStorage.getItem('context'))}</div> */}
+		
 		</div>
 	);
 };

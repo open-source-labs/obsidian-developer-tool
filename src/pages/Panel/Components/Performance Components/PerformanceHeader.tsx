@@ -1,11 +1,12 @@
 import React, {useState} from "react"
 import { Link } from 'react-router-dom'
 
-
+//component that renders query or mutation logs on click
 const PerformanceHeader = (props) => {
     const [query, setQuery] = useState('tab1')
     const [mutation, setMutation] = useState('tab2')
 
+    //conditional rendering changes state to change hidden property on css
     const activateQuery = () => {
         setQuery('tab3')
         setMutation('tab2')
