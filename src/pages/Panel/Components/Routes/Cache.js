@@ -5,32 +5,40 @@ import { oneDark } from '@codemirror/theme-one-dark';
 import { formatter } from '../formatter';
 
 const Cache = (props) => {
-	const [cacheInfo, setCacheInfo] = useState('');
+	// const [cacheInfo, setCacheInfo] = useState('');
 
-	// listen for message from webpage
-	chrome.runtime.onMessageExternal.addListener(function (
-		request,
-		sender,
-		sendResponse
-	) {
-		if (request.cache) {
-			setCacheInfo(formatter(JSON.parse(request.cache)));
-			console.log("Here's the cache message: ", request.cache);
-			console.log("Here's the cache type: ", JSON.parse(request.cache));
-		}
-		return true;
-	});
+	// // listen for message from webpage
+	// chrome.runtime.onMessageExternal.addListener(function (
+	// 	request,
+	// 	sender,
+	// 	sendResponse
+	// ) {
+	// 	if (request.cache) {
+	// 		setCacheInfo(formatter(JSON.parse(request.cache)));
+	// 	}
+	// 	return true;
+	// });
 
-	// chrome.runtime.onConnect.addListener(function(port) {
-	// 	console.assert(port.name = 'cachePort');
-	// 	port.onMessage.addListener(function(msg) {
-	// 		if (msg = )
-	// 	})
-	// })
+	// refactor with runtime.connect (long-lived connection)
+	// chrome.runtime.onConnectExternal.addListener(function (port) {
+	// 	console.log('connected', port);
+	// 	console.assert(port.name === 'cache');
+	// 	port.onMessage.addListener(
+	// 		function (msg) {
+	// 			console.log("Here's the message: ", msg);
+	// 			setCacheInfo(formatter(JSON.parse(msg.cache)));
+	// 			// if (msg.cache) {
+	// 			// 	console.log('Received the cache message');
+	// 			// 	setCacheInfo(formatter(JSON.parse(msg.cache)));
+	// 			// }
+	// 		},
+	// 		{ passive: true }
+	// 	);
+	// });
 
 	function handleClearCache() {
 		// return chrome.runtime.sendMessage({ clearCache: true });
-		setCacheInfo(
+		props.setCacheInfo(
 			formatter({
 				storage: { ROOT_QUERY: {}, ROOT_MUTATION: {} },
 				context: 'client',
@@ -47,14 +55,14 @@ const Cache = (props) => {
 			{/* <button onClick={() => handleClearCache()}>Clear Cache</button> */}
 			<button
 				type='button'
-				class='btn btn-primary'
+				class='btn btn-primary btn-sm'
 				onClick={() => handleClearCache()}
 				id='clearCacheButton'
 			>
 				Clear Cache
 			</button>
 			<CodeMirror
-				value={cacheInfo}
+				value={props.cacheInfo}
 				// height='100%'
 				// width='100%'
 				//  position='absolute'
@@ -67,7 +75,6 @@ const Cache = (props) => {
 					console.log('value:', value);
 				}}
 			/>
-			{/* <div>{console.log(window.localStorage.getItem('context'))}</div> */}
 		</div>
 	);
 };
