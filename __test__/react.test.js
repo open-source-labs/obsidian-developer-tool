@@ -82,7 +82,7 @@ describe('Unit testing React components', () => {
       render(<Playground />)
       userEvent.type((screen.getByText('Submit')).previousSibling, 'harmful characters " ) & < ');
       userEvent.click(screen.getByText('Submit'));
-      expect(screen.getByRole('heading').textContent).toBe('Current Endpoint: harmful characters &quot; &parens; &amp; &lt;');
+      expect(screen.getByRole('heading').textContent).toBe("Current Endpoint: harmful characters &amp;amp;amp;amp;amp;amp;amp;quot; &amp;amp;amp;amp;amp;parens; &amp;amp;amp;amp; &amp;lt; ");
     });
 
 
