@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Obsidian Developer Tool",
+	"version": "1.0.1",
+  "description": "Developer tool for Obsidian Deno module: http://obsidian.land/",
+  "homepage_url": "http://obsidian.land",
+  "author": "Yasir Choudhury, Linda Zhao, Ali Fay, Anthony Guan, Yurii Shchyrba",
+	"devtools_page": "devtools.html",
+	"action": {
+    "default_icon": {
+      "16": "./assets/16.jpg",
+      "48": "./assets/48.jpg",
+      "128": "./assets/128.jpg"
+    },
+    "default_title": "Obsidian Developer Tool"
+  },
+	"icons": {
+		"16": "./assets/16.jpg",
+		"48": "./assets/48.jpg",
+		"128": "./assets/128.jpg"
+	},
+	"content_scripts": [{
+		"matches": ["http://localhost:3000/*", "https://localhost:3000/*", "http://localhost:8000/*", "https://localhost:8000/*"],
+		"js": ["main.bundle.js"]
+	}],
+	"permissions": [
+    "storage"
+  ],
+	"externally_connectable": {
+		"matches": ["http://localhost:3000/*", "https://localhost:3000/*", "http://localhost:8000/*", "https://localhost:8000/*"]
+	}
+}
