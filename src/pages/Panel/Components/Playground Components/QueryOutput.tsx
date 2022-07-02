@@ -5,6 +5,7 @@ import { oneDark } from '@codemirror/theme-one-dark';
 import './playground.css';
 import { formatter } from '../formatter';
 
+
 //component for graphQL query output data within playground
 const QueryOutput = (props) => {
   const [output, setOutput] = useState(''); //need to pass in gql query results

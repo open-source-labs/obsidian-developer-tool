@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Controlled as CodeMirror } from 'react-codemirror2-react-17';
-import 'codemirror';
+import CodeMirror from 'codemirror';
 import 'codemirror-graphql/lint';
 import 'codemirror-graphql/hint';
 import 'codemirror-graphql/mode';
