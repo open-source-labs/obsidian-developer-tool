@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Header from './Components/AppBar';
-import Playground from './Components/Playground';
-import Cache from './Components/Routes/Cache';
+import Header from './Components/App Bar Components/AppBar';
+import Playground from './Components/Playground Components/Playground';
+import Cache from './Components/Cache Components/Cache'
 import Performance from './Components/Performance Components/Performance';
 import { formatter } from './Components/formatter';
 
@@ -43,6 +43,7 @@ const App = () => {
         <div> </div>
       )}
       {count === 3 ? <Playground /> : <div> </div>}
+      {count === 4 }
     </div>
   );
 };

@@ -61,7 +61,7 @@ const Cache = (props) => {
 			>
 				Clear Cache
 			</button>
-			<CodeMirror
+			{/* <CodeMirror
 				value={props.cacheInfo}
 				// height='100%'
 				// width='100%'
@@ -74,7 +74,7 @@ const Cache = (props) => {
 				onChange={(value, viewUpdate) => {
 					console.log('value:', value);
 				}}
-			/>
+			/> */}
 		</div>
 	);
 };
