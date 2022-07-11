@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import CodeMirror from '@uiw/react-codemirror';
+import { Controlled as CodeMirror } from 'react-codemirror2-react-17';
 import { javascript } from '@codemirror/lang-javascript';
 import { oneDark } from '@codemirror/theme-one-dark';
 import './playground.css';

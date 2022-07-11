@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Controlled as CodeMirror } from 'react-codemirror2';
+import { Controlled as CodeMirror } from 'react-codemirror2-react-17';
 import 'codemirror';
 import 'codemirror-graphql/lint';
 import 'codemirror-graphql/hint';

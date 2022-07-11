@@ -48,3 +48,9 @@ Use of this developer tool requires Obsidian version 5.0 or greater.
 Obsidian and Obsidian demo documentation: 
 * [Obsidian](https://github.com/open-source-labs/obsidian) 
 * [Obsidian Demo](https://github.com/oslabs-beta/obsidian-demo-5.0) 
+
+# Nates Notes
+
+npm uninstall react-codemirror2 --save --force
+npm i react-codemirror2-react-17 --force
+

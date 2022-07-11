@@ -11,9 +11,9 @@ import {
 
 import { FiHome, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 import { BiCog } from "react-icons/bi";
-import {MdExplore, MdTrendingUp} from "react-icons/Md"
-import {GoDatabase} from 'react-icons/Go'
-import {GrDocumentPerformance} from 'react-icons/Gr'
+import {MdExplore, MdTrendingUp} from "react-icons/md"
+import {GoDatabase} from 'react-icons/go'
+import {GrDocumentPerformance} from 'react-icons/gr'
 
 
 import "react-pro-sidebar/dist/css/styles.css";
