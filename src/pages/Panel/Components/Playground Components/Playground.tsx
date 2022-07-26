@@ -39,7 +39,7 @@ const Playground = (props: any) => {
     <div className='playground-container'>
       <PlaygroundHeader onEndpointChange={onEndpointChange} />
       <h2>Current Endpoint: {endpoint}</h2>
-      <div className='playground'>
+      < div className='playground'>
         <QueryInput handleGetData={handleGetData} />
         <QueryOutput data={data} />
       </div>

@@ -4,6 +4,7 @@ import Playground from './Components/Playground Components/Playground';
 import Cache from './Components/Cache Components/Cache'
 import Performance from './Components/Performance Components/Performance';
 import { formatter } from './Components/formatter';
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 

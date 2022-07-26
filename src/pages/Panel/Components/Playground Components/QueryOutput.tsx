@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import CodeMirror from '@uiw/react-codemirror';
+import { Controlled as CodeMirror } from 'react-codemirror2-react-17';
 import { javascript } from '@codemirror/lang-javascript';
 import { oneDark } from '@codemirror/theme-one-dark';
 import './playground.css';
@@ -13,15 +13,18 @@ const QueryOutput = (props) => {
   useEffect(() => {
     setOutput(formatter(props.data,0));
   }, [props.data]);
+  
 
   return (
     <div className='queryOutput'>
       <div className="head-text"># GraphQL Query Results</div>
-      <CodeMirror
-				value={output} 
-				extensions={[javascript({ jsx: true })]}
-				theme={oneDark}
-			/>
+        <>
+        <CodeMirror
+				  value={output} 
+				  extensions={[javascript({ jsx: true })]}
+				  theme={oneDark}
+			  />
+      </>
     </div>
   );
 };
