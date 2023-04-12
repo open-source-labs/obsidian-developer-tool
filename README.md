@@ -1,50 +1,45 @@
-# Obsidian-Developer-Tool
+# Obsidian Developer Tool
 
-The Obsidian Developer Tool is an easy-to-use chrome developer tool extension designed for applications using Obsidian. With this extension, users can:
+The Obsidian Developer Tool 8.0 is the revamped DevTool for applications using Obsidian with no additonal configuration needed. It's an easy-to-use chrome developer tool extension where users can:
 
-- visualize GraphQL query and cache performance metrics 
-- send dynamic queries and mutations to a user's database 
-- view and evict data from the browser cache
+- visualize client cache performance metrics (i.e. hit ratio, time graphs)
+- view previous queries through a query log and client hit, client miss, and mutation time trends
 
-These features require minimal configuration and are designed to cater to the needs of Obsidian developers utilizing Obsidian Wrapper in their applications.
-
-The Obsidian Developer Tool is an open-source developer tool accelerated by OS Labs and developed by [Yurii Shchyrba](https://github.com/YuriiShchyrba),   [Linda Zhao](https://github.com/lzhao15), [Ali Fay](https://github.com/ali-fay), [Anthony Guan](https://github.com/guananthony), [Yasir Choudhury](https://github.com/Yasir-Choudhury)   
+The Obsidian Developer Tool is an open-source developer tool accelerated by OS Labs and developed by [David Kim](https://github.com/davidtoyoukim), [David Norman](https://github.com/DavidMNorman), [Eileen Cho](https://github.com/exlxxn), and [Joan Manto](https://github.com/JoanManto).
 
 # Installation
 
-The Obsidian Developer Tool is currently under the review process to be launched on the Chrome Extension Store. In the meantime, the easiest way to use the developer tool is to build from source and manually add as a chrome extension. To build the latest version, execute the following commands:
-
+Currently, the easiest way to use the developer tool is to build from source and manually add as a chrome extension. To build the latest version, please follow the below instructions.
 
 ```
-git clone https://github.com/oslabs-beta/obsidian-developer-tool 
+git clone https://github.com/open-source-labs/obsidian-developer-tool.git
+cd obsidian-developer-tool/client
 npm install
 npm run build
 ```
 
-Then, in the Chrome Extensions Page (chrome://extensions/), toggle "Developer mode" on in the upper righthand corner, click on "Load unpacked" and navigate to /Obsidian-developer-tool/dist/ and click "Select". The extension should now be loaded and available within chrome developer tools.
+In the Chrome Extensions Page (chrome://extensions/), toggle "Developer Mode" on in the upper righthand corner. Click on the "Load Unpacked" button, and navigate to the client folder of the Obsidian Developer Tool repo. Click "Select", and the developer tool should now be loaded and available in the developer tools panel.
 
-# Usage and Configuration
-Clone the Obsidian repository [here](https://github.com/open-source-labs/obsidian), and in the Obsidian Wrapper file, on line 10, update ```chromeExtensionId``` to the value of the unique chrome extension ID for the tool you just unpacked in your extensions. This can be found at chrome://extensions/ on the card for your loaded extension.
+# Features
 
-There is no further configuration necessary. As long as your application is using Obsidian Wrapper (imported as a path to the local file with the updated chrome extension), the devtool will be able to retrieve cache data and query metrics on actions initiated in the app. 
+**Dashboard** <br/>
+The default landing page of the Obsidian Developer Tool is the dashboard, where the query hit rate, query total, and query time graph are displayed. These metrics are updated live as the user executes queries and mutations to test their application. Additional details like algorithm used and total capacity can also be viewed in this page.
 
-**Performance:** <br/>
-Navigate to this tab if you would like to visualize the response time of your GraphQL queries. You can access a log of your queries and mutations, as well as the corresponding response time data. Here you can see the lower response times on subsequent queries for the same data - Obsidian's caching strategies at work!
+<br/>
 
-**Cache:** <br/>
-Navigate to this tab to see the data currently in your client-side cache based on queries being made. All of the cached data will appear here, and you also have the ability to manually clear the cache with the 'clear cache' button. 
+<div><img src='./client/src/assets/dashboard.png' width='75%'/></div>
 
-**Playground:** <br/>
-In order to use this feature, you must plug in your server's GraphQL endpoint (ex. http://localhost:3000/graphQL) and click the submit button. You will now be able to write queries as well as mutations in order to retrieve and view your data.
+**Query Log** <br/>
+The query log is broken up into two parts, the query list and the query graph. Each query in the list can be selected to display details about that query. The query log graph displays each query you've made, organized by whether it was a cache hit, cache miss, or mutation. Clicking on any query node in the graph will isolate that selected query in the list, allowing you to easily check the details of that particular query.
 
-**Usage Note:**
-Use of this developer tool requires Obsidian version 5.0 or greater.
+<br/>
 
-<div><img src='./src/assets/gifs/performance.gif' width="60%"></div>
-<div><img src='./src/assets/gifs/cache.gif' width="60%"></div>
-<div><img src='./src/assets/gifs/playground.gif' width="60%"></div>
+<div><img src='./client/src/assets/query_log.png' width='75%'/></div>
 
-# More information:
-Obsidian and Obsidian demo documentation: 
-* [Obsidian](https://github.com/open-source-labs/obsidian) 
-* [Obsidian Demo](https://github.com/oslabs-beta/obsidian-demo-5.0) 
+**Usage Note** <br/>
+Use of this developer tool requires Obsidian version 8.0 or greater.
+
+# More Information
+Obsidian and Obsidian Demo documentation:
+* [Obsidian](https://github.com/open-source-labs/obsidian)
+* [Obsidian Demo](https://github.com/oslabs-beta/obsidian-8.0-demo)
