@@ -1,0 +1,197 @@
+/* DevTool White: rgb(255, 255, 255) */
+$white: rgb(255,255,255);
+/* DevTool Grey:  rgb(241, 243, 244) */
+$grey: rgb(241, 243, 244);
+/* DevTool Red:  rgb(255, 240, 240)*/
+$red: rgb(255, 240, 240);
+/* DevTool RedFont: rgb(255, 0, 12) */
+$redFont: rgb(255, 0, 12);
+/* DevTool Yellow: (255, 250, 230) */
+$yellow: rgb(255, 250, 230);
+/* DevTool YellowFont: (96, 58, 9) */
+$yellowFont: rgb(96, 58, 9);
+/* DevTools Text Color: (94, 99, 104) */
+$text: rgb(94, 99,104);
+/* DevTools Green: rgb(0, 127, 63) */
+$green: rgb(186, 218, 202);
+$greenFont: rgb(0, 127, 63);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: $white;
+  color: $text;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.panelContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $grey;
+  width: 15vw;
+  height: 100vh;
+  button {
+    width: inherit;
+    background-color: $grey;
+    border: none;
+    padding: 0.6em;
+    font-size: 1em;
+    cursor: pointer;
+  }
+}
+
+button:hover{
+  background-color: $white;
+}
+
+.active {
+  background-color: $white;
+}
+
+#dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $text;
+}
+
+#dashboardSummary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85vw;
+}
+
+#algocap {
+  display: flex;
+  flex-direction: row;
+  width: inherit;
+  justify-content: space-around;
+  padding: 1em;
+}
+
+#hitTotalContainer{
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+}
+
+#queryTotalContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 20vw;
+  padding: 5px;
+  margin: 5px;
+}
+
+#queryHitRateContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 20vw;
+  padding: 5px;
+  margin: 5px;
+}
+
+.label-text {
+  font-size: 8px;
+}
+
+.value-text {
+  font-size: 25px;
+}
+
+#queryTimeGraph {
+  height: 60vh;
+  width: 65vw;
+}
+
+.line-chart {
+  height: 70vh;
+  width: 80vw;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid black;
+  border-radius: 10px;
+  margin: 0.5em;
+  width: 80vw;
+  padding: 1em;
+}
+
+.listItem:hover {
+  background-color: $grey;
+  cursor: pointer;
+}
+
+.innerListItem {
+  background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  span {
+    background-color: inherit;
+  }
+}
+
+.hit {
+  border: 0.5px solid $green;
+}
+
+.hit:hover {
+  background-color: $green;
+}
+
+.miss {
+  border: 0.5px solid $red;
+}
+
+.miss:hover{
+  background-color: $red;
+}
+
+.querylog {
+  height: 100vh;
+  overflow: scroll;
+}
+
+.display {
+  margin: 0.5em;
+  width: 10em;
+  border: 0.5px solid $grey;
+  padding: 0.25em;
+  border-radius: 10px;
+}
+
+.display:hover {
+  background-color: $grey;
+  cursor: pointer;
+}
+
+.show {
+  background-color: $grey;
+}

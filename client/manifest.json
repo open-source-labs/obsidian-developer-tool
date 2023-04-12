@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Obsidian Developer Tool",
+  "version": "1.0.0",
+  "description": "Developer tool for Obsidian (client-side caching) Deno module",
+  "author": "David Kim, David Norman, Eileen Cho, Joan Manto",
+  "action": {
+    "default_title": "Obsidian DevTool",
+    "default_icon": "./src/assets/icon128.png"
+  },
+  "icons": {
+    "16": "./src/assets/icon16.png",
+    "48": "./src/assets/icon48.png",
+    "128": "./src/assets/icon128.png"
+  },
+  "devtools_page": "./src/devtools/index.html",
+  "content_scripts": [
+    {
+      "matches": ["*://localhost:*/*"],
+      "js": ["./src/devtools/content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "./src/devtools/background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "storage", "tabs"
+  ],
+  "externally_connectable": {
+    "matches": ["*://localhost:*/*"]
+  }
+}
